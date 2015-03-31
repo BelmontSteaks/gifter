@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Gifter{% endblock %}
+
+{% block title %}My Lists{% endblock %}
+
+{% block primary %}
+		{% if myLists %}
+		    <ul>
+		    {% for list in myLists %}
+		        <li><a href="../my-lists/{{list.slug}},{{list.list_id}}/">{{ list.list_name }}</a></li>
+		    {% endfor %}
+		    </ul>
+		{% else %}
+		    <p>No lists are available.</p>
+		{% endif %}
+		
+{% endblock %}

@@ -1,0 +1,30 @@
+<html lang="en">
+	<head>
+		<title>{%block pagetitle %}{% endblock %}</title>
+	</head>
+	<body>
+		<div id="header">Gifter</div>
+		<div id="nav">
+			<table>
+				<tr>
+					<td><a href="{% url 'index' %}">Home</a></td>
+					{% if user.is_anonymous %}
+					<td><a href="{% url 'register' %}">Register</a></td>
+					<td><a href="{% url 'login' %}">Sign In</a></td>
+					{% else %}
+					<td><a href="{% url 'add-list' %}">Add List</a></td>
+					<td><a href="{% url 'add-gifts' %}">Add Gifts</a></td>
+					<td><a href="{% url 'my-lists' %}">My Lists</a></td>	
+					<td><a href="{% url 'logout' %}">Sign Out</a></td>
+					{% endif %}
+				</tr>
+			</table>
+		</div>
+		<div id="content">
+			<div id="primary">
+				<h1>{% block title %}{% endblock %}</h1>
+				{% block primary %}{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

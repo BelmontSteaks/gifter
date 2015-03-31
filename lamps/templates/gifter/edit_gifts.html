@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Gifter{% endblock %}
+
+{% block title %}Edit Gifts{% endblock %}
+
+{% block primary %}
+		<form action="../../edit-gifts/my-list/" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+			<table>
+			{% for form in formset.forms %}
+			    <tr>
+			    {% for field in form %}
+			       <td>
+			         {{ field.errors }}
+			         {{ field.label_tag }} {{ field }}
+			       </td>
+			    {% endfor %}
+			    </tr>
+			{% endfor %}
+			</table>  
+		<input type="submit" value="Submit" />
+		</form>
+		
+{% endblock %}

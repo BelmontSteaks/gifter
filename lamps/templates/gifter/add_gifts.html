@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Gifter{% endblock %}
+
+{% block title %}Add Gifts{% endblock %}
+
+{% block primary %}
+		<form method="POST" action="../../gifter/add-gifts/">
+		    {% csrf_token %}
+		    {{ giftsform }}
+	   		<input type="submit">
+		</form>
+		
+{% endblock %}

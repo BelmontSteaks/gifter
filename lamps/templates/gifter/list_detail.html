@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Gifter{% endblock %}
+
+{% block title %}{{ my_list.0.list }}{% endblock %}
+
+{% block primary %}
+
+			<table>
+				{% for data in gift_on_list %}
+				<tr>
+					<td>{{ data.item }}</td>
+					<td>{{ data.price }}</td>
+					<td>{{ data.purchased }}</td>	
+					
+
+				</tr>
+				{% endfor %}
+			</table>
+
+{% endblock %}
+

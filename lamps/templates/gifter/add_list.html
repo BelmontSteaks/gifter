@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block pagetitle %}Gifter{% endblock %}
+
+{% block title %}Add List{% endblock %}
+
+{% block primary %}
+		
+		<form method="POST" action="../../gifter/add-list/">
+		    {% csrf_token %}
+		    {{listform}}
+	   		<input type="submit">
+		</form>
+		
+{% endblock %}
